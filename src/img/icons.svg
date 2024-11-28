@@ -7,5 +7,12 @@
     <symbol id='notification' fill="none" viewBox="0 0 50 50">
   <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.75 35.417V37.5a6.25 6.25 0 1 0 12.5 0v-2.083m-12.5 0H8.334S12.5 27.083 12.5 18.75c0-6.808 5.692-12.5 12.5-12.5s12.5 5.692 12.5 12.5c0 6.25 4.167 16.667 4.167 16.667H31.25m-12.5 0h12.5"/>
   </symbol>
+  <symbol id='message' fill="none" viewBox="0 0 50 50">
+  <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m43.75 43.75-11.875-3.958s-2.532 1.875-7.917 1.875c-9.78 0-17.708-7.929-17.708-17.709S14.178 6.25 23.958 6.25c9.78 0 17.709 7.928 17.709 17.708 0 5.209-1.875 7.917-1.875 7.917L43.75 43.75Z"/>
+  </symbol>
+  <symbol  id = 'profile' fill="none" viewBox="0 0 50 50">
+  <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M37.5 38.976c0-3.375-2.441-7.726-6.25-7.726h-12.5c-3.809 0-6.25 4.351-6.25 7.726M6.25 25C6.25 14.645 14.645 6.25 25 6.25S43.75 14.645 43.75 25 35.355 43.75 25 43.75 6.25 35.355 6.25 25Zm25-6.25a6.25 6.25 0 1 1-12.5 0 6.25 6.25 0 0 1 12.5 0Z"/>
+  </symbol>
+
 </svg>
 

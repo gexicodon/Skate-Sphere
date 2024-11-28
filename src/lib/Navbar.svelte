@@ -13,12 +13,15 @@
     </nav>
     <div class='icons'>
         <Icon id="notification" width='50' height='50'></Icon>
+        <Icon id="message" width='50' height='50'></Icon>
+        <Icon id='profile' width='50' height='50'></Icon>
     </div>
 </div>
 
 <style lang='scss'>
     .header {
         width: 100%;
+        height: 106px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -32,6 +35,12 @@
         text-decoration: none;
         color:white;
     }
+    .icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 23px;
+    }
     nav {
         display: flex;
         flex-direction: row;
@@ -39,9 +48,12 @@
         padding: 0px;
         gap:116px;
         font-family: "Montserrat", serif;
-        font-weight: 800;
+        font-weight: 500;
         a {
             color:white;
+        }
+        a:hover {
+            color: #870000;
         }
     }
     }
