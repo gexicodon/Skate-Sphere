@@ -5,17 +5,17 @@
 let currentIndex = 0
 const slides = [
     {
-        image: 'src/img/carousel_img1.png',
+        image: '/carousel_img1.png',
         title: 'Grand Skate Tour 2024',
         description: 'Крупнейшее скейт-мероприятие в России',
     },
     {
-        image: 'src/img/carousel_img2.png',
+        image: '/carousel_img2.png',
         title: 'SLS 2024',
         description: 'Самый крупный международный турнир по скейтбордингу'
     },
     {
-        image: 'src/img/carousel_img3.png',
+        image: '/carousel_img3.png',
         title: 'Крытые скейтпарки Москвы',
         description: 'Где можно покататься зимой в 2024 году'
     }
@@ -93,13 +93,13 @@ function nextSlide() {
             display: flex;
             flex-direction: row;
             align-items: flex-start;
-            padding: 0px;
-            gap: 1732px;
+            padding: 0px 34px;
+            justify-content: space-between;
 
             position: absolute;
-            width: 1852px;
+            width: 100%;
             height: 60px;
-            left: 34px;
+            left: 0;
             top: 290px;
     }
         
