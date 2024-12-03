@@ -41,7 +41,7 @@ export let description;
         color: #1E1E1E;
         width: 537px;
         height: 42px;
-        font-family: 'Syne';
+        font-family: 'Montserrat';
         font-style: normal;
         font-weight: 800;
         font-size: 64px;
@@ -49,14 +49,13 @@ export let description;
         display: flex;
         align-items: center;
         text-align: center;
-        letter-spacing: -0.06em;
         text-decoration: underline;
     }
     h2 {
         width: 527px;
         height: 223px;
 
-        font-family: 'Syne';
+        font-family: 'Montserrat';
         font-style: normal;
         font-weight: 600;
         font-size: 36px;
@@ -64,7 +63,6 @@ export let description;
         display: flex;
         text-align: left;
         align-items: center;
-        letter-spacing: -0.06em;
     }
     }
 </style>

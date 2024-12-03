@@ -1,7 +1,8 @@
 <script>
 export let text;
+export let link;
 </script>
-<a href='/' aria-label="Register">
+<a href={link} aria-label="Register">
     <div class='button_container'>
         <span>{text}</span>
     </div>
@@ -20,10 +21,9 @@ export let text;
         border-radius: 30px;
     span {
         color: white;
-        font-family: 'Syne';
+        font-family: 'Montserrat';
         font-weight: 800;
         font-size: 48px;
-        letter-spacing: -0.06em;
     }
     :hover {
         color: #870000;
