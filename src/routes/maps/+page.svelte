@@ -1,5 +1,6 @@
 <script>
-  import Navbar from "$lib/Navbar.svelte";
+  import Footer from "$lib/Footer.svelte";
+import Navbar from "$lib/Navbar.svelte";
   import { Map, TileLayer, Marker, Popup } from 'sveaflet';
 </script>
 
@@ -8,18 +9,21 @@
   <div class="banner_content animated fadeInUp">
     <h1 class="title">Скейтпарки Москвы</h1>
   </div>
-  <div class='maps'>
-    <Map
-		options={{
-			center: [51.505, -0.09],
-			zoom: 13
-		}}
-	>
-		<TileLayer url={'https://tile.openstreetmap.org/{z}/{x}/{y}.png'} />
-		<Marker latLng={[51.505, -0.09]} />
-	</Map>
-  </div>
 </div>
+
+<div class='maps'>
+  <Map
+  options={{
+    center: [55.755149071823766, 37.61708504822973],
+    zoom: 12
+  }}
+>
+  <TileLayer url={'https://tile.openstreetmap.org/{z}/{x}/{y}.png'} />
+  <Marker latLng={[55.82189848957887, 37.44945912548659]} />
+</Map>
+</div>
+
+<Footer/>
 
 <style lang="scss">
   .banner_container {
@@ -51,5 +55,9 @@
       justify-content: center;
       align-items: center;
     }
+  }
+  .maps {
+    width: 100%;
+    height: 1000px;
   }
 </style>
