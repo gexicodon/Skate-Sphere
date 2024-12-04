@@ -2,7 +2,10 @@
   import Carousel from "$lib/Carousel.svelte";
   import Footer from "$lib/Footer.svelte";
   import Navbar from "$lib/Navbar.svelte";
+<<<<<<< HEAD
   import Newscard from "$lib/Newscard.svelte";
+=======
+>>>>>>> 2141af2db37d07ba82552e70a1f36f79c71963b7
 </script>
 
 <Navbar />
@@ -21,6 +24,7 @@
 </div>
 </div>
 <Footer />
+<<<<<<< HEAD
 
 <style lang="scss">
 
@@ -38,3 +42,8 @@
 
 
 
+=======
+
+<style lang="scss">
+</style>
+>>>>>>> 2141af2db37d07ba82552e70a1f36f79c71963b7
