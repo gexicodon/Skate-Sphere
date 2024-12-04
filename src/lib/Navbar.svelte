@@ -5,7 +5,7 @@
 <div class='header'>
     <a href='/' class='logo'>SkateSphere</a>
     <nav>
-        <a href='/'>Карты</a>
+        <a href='/maps'>Карты</a>
         <a href='/'>Трюки</a>
         <a href='/news'>Новости</a>
         <a href='/'>Советы</a>

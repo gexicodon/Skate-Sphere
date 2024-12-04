@@ -10,6 +10,6 @@
  </style>
  
  <svg class={className} width={width} height={height}>
-     <use href={`src/img/icons.svg#${id}`} xlink:href={`src/img/icons.svg#${id}`} />
+     <use href={`/icons.svg#${id}`} xlink:href={`/icons.svg#${id}`} />
  </svg>
  
