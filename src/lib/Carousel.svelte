@@ -1,23 +1,23 @@
 <script>
-  import Button from "./Button.svelte";
-  import Icon from "./Icon.svelte";
+  import Button from './Button.svelte';
+  import Icon from './Icon.svelte';
 
   let currentIndex = 0;
   const slides = [
     {
-      image: "/carousel_img1.png",
-      title: "Grand Skate Tour 2024",
-      description: "Крупнейшее скейт-мероприятие в России",
+      image: '/carousel_img1.png',
+      title: 'Grand Skate Tour 2024',
+      description: 'Крупнейшее скейт-мероприятие в России',
     },
     {
-      image: "/carousel_img2.png",
-      title: "SLS 2024",
-      description: "Самый крупный международный турнир по скейтбордингу",
+      image: '/carousel_img2.png',
+      title: 'SLS 2024',
+      description: 'Самый крупный международный турнир по скейтбордингу',
     },
     {
-      image: "/carousel_img3.png",
-      title: "Крытые скейтпарки Москвы",
-      description: "Где можно покататься зимой в 2024 году",
+      image: '/carousel_img3.png',
+      title: 'Крытые скейтпарки Москвы',
+      description: 'Где можно покататься зимой в 2024 году',
     },
   ];
 
@@ -73,7 +73,7 @@
       gap: 65px;
       h2 {
         text-align: center;
-        font-family: "Montserrat";
+        font-family: 'Montserrat';
         font-style: normal;
         font-weight: 800;
         font-size: 96px;
@@ -81,7 +81,7 @@
         color: #ffffff;
       }
       p {
-        font-family: "Montserrat";
+        font-family: 'Montserrat';
         font-style: normal;
         font-weight: 500;
         font-size: 36px;

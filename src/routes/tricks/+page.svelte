@@ -1,32 +1,20 @@
-<script>
+<script lang="ts">
   import Footer from '$lib/Footer.svelte';
   import Navbar from '$lib/Navbar.svelte';
-  import { Map, TileLayer, Marker, Popup } from 'sveaflet';
+  import Trick from '$lib/Trick.svelte';
 </script>
 
 <Navbar />
-<div class="banner_container">
-  <div class="banner_content animated fadeInUp">
-    <h1 class="title">Скейтпарки Москвы</h1>
+<div class="banner">
+  <div class="banner_content">
+    <h1 class="title">Трюки</h1>
   </div>
-</div>
-
-<div class="maps">
-  <Map
-    options={{
-      center: [55.755149071823766, 37.61708504822973],
-      zoom: 12,
-    }}
-  >
-    <TileLayer url={'https://tile.openstreetmap.org/{z}/{x}/{y}.png'} />
-    <Marker latLng={[55.82189848957887, 37.44945912548659]} />
-  </Map>
 </div>
 
 <Footer />
 
 <style lang="scss">
-  .banner_container {
+  .banner {
     width: 100%;
     height: 642px;
     background: #870000;
@@ -35,7 +23,7 @@
     align-items: flex-start;
     padding: 0px;
     gap: 10px;
-    background-image: url('/maps.png');
+    background-image: url('/banner_img2.png');
     background-size: 100% 100%;
     .title {
       font-family: 'Montserrat';
@@ -55,9 +43,5 @@
       justify-content: center;
       align-items: center;
     }
-  }
-  .maps {
-    width: 100%;
-    height: 1000px;
   }
 </style>
