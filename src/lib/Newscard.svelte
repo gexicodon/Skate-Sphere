@@ -1,17 +1,15 @@
 <script>
-  export let title;
-  export let imgSrc;
-  export let description;
-  export let linkNews;
+  import { Post } from "./models/post";
+  export let post = new Post();
 </script>
 
 <div class="card">
-  <div class="img" style="background: url({imgSrc});"></div>
+  <div class="img" style="background: url({post.cover});"></div>
   <div class="content">
-    <h1 class="title">{title}</h1>
-    <p class="description">{description}</p>
+    <h1 class="title">{post.title}</h1>
+    <p class="description">{post.description}</p>
     <button class="more-button">
-      <a href={linkNews}>Подробнее</a>
+      <a href={post.link}>Подробнее</a>
     </button>
   </div>
 </div>

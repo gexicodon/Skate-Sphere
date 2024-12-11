@@ -1,14 +1,15 @@
 <script>
-  export let title;
-  export let description;
+  import { Trick } from "./models/trick";
+  export let trick = new Trick();
+
 </script>
 
 <div class="card">
   <div class="content">
-    <h1>{title}</h1>
-    <p>{description}</p>
+    <h1>{trick.trickTitle}</h1>
+    <p>{trick.trickDescription}</p>
     <button>
-      <a href='/'>Подробнее</a>
+      <a href={trick.trickLink}>Подробнее</a>
     </button>
   </div>
 </div>

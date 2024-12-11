@@ -2,23 +2,29 @@
   import Carousel from '$lib/Carousel.svelte';
   import Footer from '$lib/Footer.svelte';
   import Navbar from '$lib/Navbar.svelte';
-
   import Newscard from '$lib/Newscard.svelte';
+  import { db } from '$lib/scripts/firebase';
+  import { onValue, ref } from 'firebase/database';
+  import { onMount } from 'svelte';
+
+  let posts = new Array();
+
+  onMount(() => {
+        onValue(ref(db, '/posts'), s => {
+            if(s.exists()){
+                posts = Object.values(s.val());
+            }
+        });
+    });
 </script>
 
 <Navbar />
 <Carousel />
 <div class="main">
   <div class="content">
-    <Newscard title="example" description="example" imgSrc="/example.jpg" linkNews="/" />
-    <Newscard title="example" description="example" imgSrc="/example.jpg" linkNews="/" />
-    <Newscard title="example" description="example" imgSrc="/example.jpg" linkNews="/" />
-    <Newscard title="example" description="example" imgSrc="/example.jpg" linkNews="/" />
-    <Newscard title="example" description="example" imgSrc="/example.jpg" linkNews="/" />
-    <Newscard title="example" description="example" imgSrc="/example.jpg" linkNews="/" />
-    <Newscard title="example" description="example" imgSrc="/example.jpg" linkNews="/" />
-    <Newscard title="example" description="example" imgSrc="/example.jpg" linkNews="/" />
-    <Newscard title="example" description="example" imgSrc="/example.jpg" linkNews="/" />
+    {#each posts as post}
+    <Newscard {post} />
+    {/each}
   </div>
 </div>
 <Footer />
