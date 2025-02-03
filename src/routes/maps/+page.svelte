@@ -2,6 +2,20 @@
   import Footer from '$lib/Footer.svelte';
   import Navbar from '$lib/Navbar.svelte';
   import { Map, TileLayer, Marker, Popup } from 'sveaflet';
+  import { Point } from '$lib/models/point';
+  import { db } from '$lib/scripts/firebase';
+  import { onValue, ref } from 'firebase/database';
+  import { onMount } from 'svelte';
+
+  let points = new Array();
+
+  onMount(() => {
+        onValue(ref(db, '/points'), s => {
+            if(s.exists()){
+                points = Object.values(s.val());
+            }
+        });
+    });
 </script>
 
 <Navbar />
@@ -18,8 +32,12 @@
       zoom: 12,
     }}
   >
-    <TileLayer url={'https://tile.openstreetmap.org/{z}/{x}/{y}.png'} />
-    <Marker latLng={[55.82189848957887, 37.44945912548659]} />
+  <TileLayer url={'https://tile.openstreetmap.org/{z}/{x}/{y}.png'} />
+  {#each points as point}
+    {#if point.latitude && point.longitude}
+    <Marker latLng={[point.latitude, point.longitude]} />
+    {/if}
+    {/each}
   </Map>
 </div>
 

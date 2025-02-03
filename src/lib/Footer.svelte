@@ -1,4 +1,6 @@
 <script>
+  import Icon from "./Icon.svelte";
+
 
 </script>
 
@@ -6,24 +8,28 @@
     <div class='content'>
         <h1 class='logo'>SkateSphere</h1>
         <div class='contacts'>
-            <h2>Контакты:</h2>
-            <h2>Telegram: SHUTTHEFUCKUP111</h2>
-            <h2>Github: gexicodon</h2>
+            <a href='https://t.me/skatesphere'>
+            <Icon id='telegram' width='48' height='48'/>
+        </a>
+        <a href='https://github.com/gexicodon'>
+            <Icon id='github' width = '48' height='48'/>
+        </a>
         </div>
-        <h2 class='footer_text'>Все материалы используются в некоммерческих целях. Проект создан в образовательных целях. </h2>
+        <h2 class='footer_text'>Проект создан в образовательных целях. </h2>
     </div>
 </div>
 
 <style lang="scss">
     .footer {
         width: 100%;
-        height: 464px;
+        height: 300px;
         display: flex;
         flex-direction: row;
         align-items: center;
         padding: 80px 86px;
         gap: 10px;
         background: #1E1E1E;
+        border-top: 1px solid white;
     }
     .content {
         display: flex;
@@ -31,7 +37,7 @@
         justify-content: center;
         align-items: flex-start;
         padding: 0px;
-        gap: 63px;
+        gap: 33px;
         .logo {
             font-family: "Syne", sans-serif;
             font-weight: 800;
@@ -51,10 +57,10 @@
         }
     .contacts {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
         padding: 0px;
-        gap: 28px;
+        gap: 40px;
         h2 {
             font-family: "Montserrat";
             font-style: normal;

@@ -1,32 +1,48 @@
-<script>
+<script lang='ts'>
   import Carousel from '$lib/Carousel.svelte';
   import Footer from '$lib/Footer.svelte';
   import Navbar from '$lib/Navbar.svelte';
   import Newscard from '$lib/Newscard.svelte';
-  import { db } from '$lib/scripts/firebase';
-  import { onValue, ref } from 'firebase/database';
+  import { getPosts } from '$lib/scripts/firebase';
+  import { Post } from '$lib/models/post';
   import { onMount } from 'svelte';
 
-  let posts = new Array();
+  let posts: Post[] = [];
+  let loading = true;
+  let error: Error | null = null;
 
-  onMount(() => {
-        onValue(ref(db, '/posts'), s => {
-            if(s.exists()){
-                posts = Object.values(s.val());
-            }
-        });
-    });
+  onMount(async () => {
+    try {
+      loading = true;
+      posts = await getPosts();
+      loading = false;
+    } catch (err: unknown) { // <--- ЗДЕСЬ ИЗМЕНЕНИЕ
+      if (err instanceof Error) {
+        error = err;
+      } else {
+        // Обработка случая, когда err не является Error
+        error = new Error(`Неизвестная ошибка: ${String(err)}`); 
+      }
+      loading = false;
+    }
+  });
 </script>
 
 <Navbar />
 <Carousel />
-<div class="main">
-  <div class="content">
-    {#each posts as post}
-    <Newscard {post} />
-    {/each}
+{#if loading}
+  <p>Загрузка...</p>
+{:else if error}
+  <p>Ошибка загрузки постов: {error.message}</p>
+{:else}
+  <div class="main">
+    <div class="content">
+      {#each posts as post}
+        <Newscard {post} />
+      {/each}
+    </div>
   </div>
-</div>
+{/if}
 <Footer />
 
 <style lang="scss">

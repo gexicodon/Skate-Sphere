@@ -6,7 +6,8 @@ export class Post {
         created = new Date().toISOString().slice(0, 10),
         published = true, 
         content = null,
-        link = ""
+        slug = "",
+        cap = null
     )  {
         this.title = title;
         this.description = description;
@@ -14,6 +15,7 @@ export class Post {
         this.created = created;
         this.published = published;
         this.content = content;
-        this.link = link;
+        this.slug = slug;
+        this.cap = cap;
     }
 }

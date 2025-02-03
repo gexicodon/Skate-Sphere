@@ -1,11 +1,13 @@
 <script>
     import { Post } from "$lib/models/post";
     import { Trick } from "$lib/models/trick";
+    import { Point } from "$lib/models/point";
     import { db } from "$lib/scripts/firebase";
     import { ref, push, set } from "firebase/database";
 
     let post = new Post();
     let trick = new Trick();
+    let point = new Point();
 </script>
 
 <div>
@@ -13,7 +15,7 @@
     <input bind:value={post.title} placeholder="Заголовок" />
     <input bind:value={post.description} placeholder="Описание" />
     <input bind:value={post.cover} placeholder="URL обложки" />
-    <input bind:value={post.link} placeholder="URL обложки" />
+    <input bind:value={post.slug} placeholder="ссылка" />
     <input bind:value={post.created}  />
     <input type='checkbox' bind:checked={post.published} name='опубликовано'>
     <textarea bind:value={post.content}  placeholder="Содержимое записи" />
@@ -32,5 +34,15 @@
 <button on:click={() => {
     push(ref(db, "/tricks"), trick);
     trick = new Trick();
+}}>сохранить</button>
+
+<h1>создать метку</h1>
+<input bind:value={point.title} placeholder="Заголовок" />
+<input bind:value={point.latitude} placeholder="ширина" />
+<input bind:value={point.longitude} placeholder="ширина" />
+
+<button on:click={() => {
+    push(ref(db, "/points"), point);
+    point = new Point();
 }}>сохранить</button>
 </div>

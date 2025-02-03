@@ -9,7 +9,7 @@
 
 <div class="banner_container">
   <div class="banner_content animated fadeInUp">
-    <h1 class="title">Лучший способ научиться трюкам</h1>
+    <h1 class="title">Платформа для обучения трюкам на скейтборде</h1>
     <Button link="/" text="Присоединиться"></Button>
   </div>
 </div>

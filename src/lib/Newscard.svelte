@@ -1,16 +1,13 @@
 <script>
-  import { Post } from "./models/post";
-  export let post = new Post();
+  export let post; // Принимаем Post как свойство
 </script>
 
 <div class="card">
-  <div class="img" style="background: url({post.cover});"></div>
+  <div class="img" style="background-image: url({post.cover}); background-size: cover;"></div> <!-- Изменено для лучшего отображения -->
   <div class="content">
     <h1 class="title">{post.title}</h1>
     <p class="description">{post.description}</p>
-    <button class="more-button">
-      <a href={post.link}>Подробнее</a>
-    </button>
+    <a href={`/news/${post.slug}`} class="more-button">Подробнее</a> <!-- Убрал <button> -->
   </div>
 </div>
 
@@ -48,7 +45,7 @@
 
         font-family: 'Montserrat';
         font-weight: 800;
-        font-size: 24px;
+        font-size: 20px;
         color: #ffffff;
       }
       p {
@@ -57,32 +54,20 @@
 
         font-family: 'Montserrat';
         font-weight: 400;
-        font-size: 20px;
+        font-size: 16px;
         color: #ffffff;
       }
       .more-button {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 0px;
-        gap: 10px;
-
-        width: 182px;
-        height: 52px;
-
-        background: #870000;
+        display: inline-block; /* Изменено */
+        padding: 10px 20px; /* Добавлено */
+        background-color: #870000;
+        color: white;
+        text-decoration: none; /* Добавлено */
         border-radius: 10px;
-        a {
-          color: #ffffff;
-          align-items: center;
-          text-align: center;
-          font-family: 'Montserrat';
-          font-weight: 800;
-          font-size: 20px;
-        }
+        font-family: 'Montserrat';
+        font-weight: 800;
+    }
       }
     }
-  }
+  
 </style>

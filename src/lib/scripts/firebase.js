@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+import { getDatabase, ref, onValue, get } from "firebase/database";
 import { getAuth } from "firebase/auth";
+import { Post } from '../models/post';
 
 
 const firebaseConfig = {
@@ -17,3 +18,20 @@ const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export const db = getDatabase(app);
+
+export const getPosts = async () => {
+  try {
+      const snapshot = await get(ref(getDatabase(), '/posts'));
+      if (snapshot.exists()) {
+          return Object.values(snapshot.val()).map(post => {
+            //преобразуем строку в объект даты, если данные хранятся как строка
+            return new Post(post.title, post.description, post.cover, post.created, post.published, post.content, post.slug);
+          });
+      } else {
+          return [];
+      }
+  } catch (error) {
+      console.error("Ошибка при получении постов:", error);
+      return []; // Возвращаем пустой массив при ошибке
+  }
+};
