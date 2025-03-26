@@ -1,16 +1,18 @@
-export class Trick {
+export class TrickContent {
     constructor(
         trickTitle = "",
         trickDescription = null,
-        trickLink = "",
+        slug = "",
         trickVideo = "",
-        category = null
+        category = null,
+        content = ""
     ) {
         this.trickTitle = trickTitle;
         this.trickDescription = trickDescription;
-        this.trickLink = trickLink;
+        this.slug = slug;
         this.trickVideo = trickVideo;
-        this.category = category
+        this.category = category;
+        this.content = content;
 
     }
 }

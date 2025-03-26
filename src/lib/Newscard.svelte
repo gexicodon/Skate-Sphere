@@ -58,16 +58,64 @@
         color: #ffffff;
       }
       .more-button {
-        display: inline-block; /* Изменено */
-        padding: 10px 20px; /* Добавлено */
+        display: inline-block;
+        padding: 10px 20px;
         background-color: #870000;
         color: white;
-        text-decoration: none; /* Добавлено */
+        text-decoration: none;
         border-radius: 10px;
         font-family: 'Montserrat';
         font-weight: 800;
-    }
       }
     }
-  
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      flex-direction: column;
+      width: 90%;
+      height: auto;
+      padding: 20px;
+
+      .img {
+        width: 100%;
+        height: 200px;
+      }
+      .content {
+        width: 100%;
+        height: auto;
+        padding: 20px 0px;
+        gap: 20px;
+
+        h1, p {
+          width: 100%;
+          text-align: center;
+        }
+        .more-button {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      .img {
+        height: 150px;
+      }
+      .content {
+        h1 {
+          font-size: 18px;
+        }
+        p {
+          font-size: 14px;
+        }
+        .more-button {
+          padding: 8px 16px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
 </style>

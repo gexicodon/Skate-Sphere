@@ -3,6 +3,7 @@
   import Card from "$lib/Card.svelte";
   import Footer from "$lib/Footer.svelte";
   import Navbar from "$lib/Navbar.svelte";
+  import MainPageCard from "$lib/MainPageCard.svelte";
 </script>
 
 <Navbar />
@@ -10,11 +11,11 @@
 <div class="banner_container">
   <div class="banner_content animated fadeInUp">
     <h1 class="title">Платформа для обучения трюкам на скейтборде</h1>
-    <Button link="/" text="Присоединиться"></Button>
   </div>
 </div>
 
 <div class="cards_group">
+  <MainPageCard />
   <Card
     imgSrc="/card1.png"
     title="Наша задача"
@@ -40,6 +41,7 @@
     gap: 10px;
     background-image: url("/banner_img.png");
     background-size: 100% 100%;
+
     .title {
       font-family: "Montserrat";
       font-weight: 800;
@@ -48,6 +50,7 @@
       text-align: center;
       width: 1180px;
     }
+
     .banner_content {
       width: 100%;
       height: 642px;
@@ -59,6 +62,7 @@
       align-items: center;
     }
   }
+
   .cards_group {
     display: flex;
     flex-direction: column;
@@ -67,34 +71,48 @@
     gap: 86px;
   }
 
-  @keyframes fadeInUp {
-    from {
-      transform: translate3d(0, 40px, 0);
+
+  @media (max-width: 768px) {
+    .banner_container {
+      height: 400px; 
+      background-size: cover;
+
+      .title {
+        font-size: 48px; 
+        width: 80%; 
+      }
+
+      .banner_content {
+        height: 400px; 
+        gap: 20px; 
+      }
     }
 
-    to {
-      transform: translate3d(0, 0, 0);
-      opacity: 1;
+    .cards_group {
+      padding: 30px;
+      gap: 30px; 
     }
   }
 
-  @keyframes showObject {
-    from {
-      display: none;
+
+  @media (max-width: 480px) {
+    .banner_container {
+      height: 300px; 
+
+      .title {
+        font-size: 36px; 
+        width: 90%; 
+      }
+
+      .banner_content {
+        height: 300px; 
+        gap: 10px; 
+      }
     }
-    to {
-      display: flex;
+
+    .cards_group {
+      padding: 20px; 
+      gap: 20px; 
     }
-  }
-  .animated {
-    animation-duration: 2s;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-fill-mode: both;
-  }
-  .fadeInUp {
-    opacity: 0;
-    animation-name: fadeInUp;
-    -webkit-animation-name: fadeInUp;
   }
 </style>

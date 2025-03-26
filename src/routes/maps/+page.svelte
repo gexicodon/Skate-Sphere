@@ -2,11 +2,10 @@
   import Footer from '$lib/Footer.svelte';
   import Navbar from '$lib/Navbar.svelte';
   import { Map, TileLayer, Marker, Popup } from 'sveaflet';
-  import { Point } from '$lib/models/point';
   import { db } from '$lib/scripts/firebase';
   import { onValue, ref } from 'firebase/database';
   import { onMount } from 'svelte';
-
+  import Mapcontent from '$lib/Mapcontent.svelte';
   let points = new Array();
 
   onMount(() => {
@@ -16,6 +15,7 @@
             }
         });
     });
+  
 </script>
 
 <Navbar />
@@ -24,7 +24,6 @@
     <h1 class="title">Скейтпарки Москвы</h1>
   </div>
 </div>
-
 <div class="maps">
   <Map
     options={{
@@ -35,7 +34,11 @@
   <TileLayer url={'https://tile.openstreetmap.org/{z}/{x}/{y}.png'} />
   {#each points as point}
     {#if point.latitude && point.longitude}
-    <Marker latLng={[point.latitude, point.longitude]} />
+    <Marker latLng={[point.latitude, point.longitude]}> 
+      <Popup>
+        <a href={`/maps/${point.slug}`}>Открыть</a>
+      </Popup>
+    </Marker>
     {/if}
     {/each}
   </Map>
@@ -54,28 +57,74 @@
     padding: 0px;
     gap: 10px;
     background-image: url('/maps.png');
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
+
     .title {
       font-family: 'Montserrat';
       font-weight: 800;
       font-size: 96px;
       color: white;
       text-align: center;
-      width: 1180px;
+      width: 100%;
+      margin: 0;
     }
+
     .banner_content {
       width: 100%;
-      height: 642px;
-      position: absolute;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      gap: 51px;
       justify-content: center;
       align-items: center;
+      padding: 0 20px;
     }
   }
+
   .maps {
     width: 100%;
     height: 1000px;
+
+    @media (max-width: 1200px) {
+      height: 800px;
+    }
+
+    @media (max-width: 768px) {
+      height: 600px;
+    }
+
+    @media (max-width: 480px) {
+      height: 400px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .banner_container {
+      height: 500px;
+
+      .title {
+        font-size: 72px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .banner_container {
+      height: 400px;
+
+      .title {
+        font-size: 48px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .banner_container {
+      height: 300px;
+
+      .title {
+        font-size: 36px;
+      }
+    }
   }
 </style>

@@ -17,7 +17,7 @@
     {
       image: '/carousel_img3.png',
       title: 'Крытые скейтпарки Москвы',
-      description: 'Где можно покататься зимой в 2024 году',
+      description: 'Где можно покататься зимой в 2024-2025 году',
     },
   ];
 
@@ -25,9 +25,7 @@
     currentIndex = (currentIndex + 1) % slides.length;
   }
 
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  }
+  setInterval(nextSlide, 5000);
 </script>
 
 <div class="carousel">
@@ -40,14 +38,6 @@
       </div>
     {/each}
   </div>
-  <div class="scroll">
-    <button class="nav-button prev" on:click={prevSlide}>
-      <Icon id="scroll_left" width="60" height="60" />
-    </button>
-    <button class="nav-button next" on:click={nextSlide}>
-      <Icon id="scroll_right" width="60" height="60" />
-    </button>
-  </div>
 </div>
 
 <style lang="scss">
@@ -56,50 +46,113 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 642px;
+    height: 642px; /* Высота карусели по умолчанию */
     margin: auto;
+
     .slides {
       display: flex;
       transition: transform 0.5s ease-in-out;
+      height: 100%; /* Слайды занимают всю высоту карусели */
     }
+
     .slide {
       min-width: 100%;
-      height: 642px;
-      background-size: cover;
+      height: 100%; /* Слайд занимает всю высоту карусели */
+      background-size: cover; /* Изображение масштабируется, чтобы заполнить слайд */
+      background-position: center; /* Центрирование изображения */
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 103px;
-      gap: 65px;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+      text-align: center;
+
       h2 {
-        text-align: center;
-        font-family: 'Montserrat';
-        font-style: normal;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 800;
         font-size: 96px;
         line-height: 100px;
         color: #ffffff;
+        margin: 0;
       }
+
       p {
-        font-family: 'Montserrat';
-        font-style: normal;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 500;
         font-size: 36px;
         color: #ffffff;
+        margin: 0;
       }
     }
-    .scroll {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      padding: 0px 34px;
-      justify-content: space-between;
+  }
 
-      position: absolute;
-      width: 100%;
-      height: 60px;
-      left: 0;
-      top: 290px;
+  /* Медиазапросы для адаптации под разные устройства */
+  @media (max-width: 1200px) {
+    .carousel {
+      height: 500px;
+
+      .slide {
+        h2 {
+          font-size: 72px;
+          line-height: 80px;
+        }
+
+        p {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel {
+      height: 400px;
+
+      .slide {
+        h2 {
+          font-size: 48px;
+          line-height: 60px;
+        }
+
+        p {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .carousel {
+      height: 300px;
+
+      .slide {
+        h2 {
+          font-size: 36px;
+          line-height: 40px;
+        }
+
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 360px) {
+    .carousel {
+      height: 250px;
+
+      .slide {
+        h2 {
+          font-size: 28px;
+          line-height: 32px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
     }
   }
 </style>

@@ -15,11 +15,8 @@
     <a href="/tricks">Трюки</a>
     <a href="/news">Новости</a>
     <a href="/">Советы</a>
-    <a href="/">События</a>
   </nav>
   <div class="icons">
-    <Icon id="notification" width="50" height="50"></Icon>
-    <Icon id="message" width="50" height="50"></Icon>
     <Icon id="profile" width="50" height="50"></Icon>
   </div>
 </div>
@@ -36,7 +33,6 @@
     <a class='link' href="/tricks">Трюки</a>
     <a class='link' href="/news">Новости</a>
     <a class='link' href="/">Советы</a>
-    <a class='link' href="/">События</a>
   </div>
 </div>
 
@@ -47,23 +43,33 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 25px 34px;
     background-color: #1e1e1e;
     position: sticky;
+    top: 0;
+    z-index: 1000;
+
     .logo {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
       font-size: 40px;
       text-decoration: none;
       color: white;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.8;
       }
-    
+    }
+
     .icons {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       gap: 23px;
     }
+
     nav {
       display: flex;
       flex-direction: row;
@@ -72,67 +78,129 @@
       gap: 116px;
       font-family: 'Montserrat', serif;
       font-weight: 500;
+
       a {
         color: white;
-      }
-      a:hover {
-        color: #870000;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #870000;
+        }
       }
     }
   }
 
   .navhamburger {
-    display: none; 
+    display: none;
     flex-direction: column;
-  }
-  .navhamburger_header {
-    height: 106px;
     width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 25px 34px;
     background-color: #1e1e1e;
-  }
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-  .menu {
-      flex-direction: column;
+    .navhamburger_header {
+      height: 106px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
       align-items: center;
-      padding: 0px;
-      gap: 53px;
-      font-family: 'Montserrat', serif;
-      font-weight: 500;
-      padding: 30px;
+      padding: 25px 34px;
       background-color: #1e1e1e;
     }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 30px;
+      font-family: 'Montserrat', serif;
+      font-weight: 500;
+      background-color: #1e1e1e;
 
       .link {
         color: white;
         width: 100%;
         text-align: center;
+        font-size: 18px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #870000;
+        }
       }
-      .link:hover {
-        color: #870000;
-      }
-  
+    }
+  }
 
   .ham_logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 40px;
-      text-decoration: none;
-      color: white;
-      width: max-content;
-      
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    text-decoration: none;
+    color: white;
+    width: max-content;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
     }
+  }
+
   @media (max-width: 1550px) {
     .header {
-      display: none; 
+      display: none;
     }
+
     .navhamburger {
-      display: flex; 
-    }
-    .navhamburger_header {
       display: flex;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navhamburger {
+      .navhamburger_header {
+        height: 80px;
+        padding: 15px 20px;
+      }
+
+      .ham_logo {
+        font-size: 32px;
+      }
+
+      .menu {
+        padding: 15px;
+        gap: 20px;
+
+        .link {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .navhamburger {
+      .navhamburger_header {
+        height: 70px;
+        padding: 10px 15px;
+      }
+
+      .ham_logo {
+        font-size: 28px;
+      }
+
+      .menu {
+        padding: 10px;
+        gap: 20px;
+
+        .link {
+          font-size: 14px;
+        }
+      }
     }
   }
 </style>

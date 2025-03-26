@@ -1,12 +1,10 @@
 <script>
     import { Post } from "$lib/models/post";
-    import { Trick } from "$lib/models/trick";
     import { Point } from "$lib/models/point";
     import { db } from "$lib/scripts/firebase";
     import { ref, push, set } from "firebase/database";
 
     let post = new Post();
-    let trick = new Trick();
     let point = new Point();
 </script>
 
@@ -25,24 +23,4 @@
         post = new Post();
     }}>сохранить</button>
 
-<h1>создать трюк)</h1>
-<input bind:value={trick.trickTitle} placeholder="Заголовок" />
-<input bind:value={trick.trickDescription} placeholder="Описание" />
-<input bind:value={trick.trickLink} placeholder="ссылка на страницу" />
-<input bind:value={trick.trickVideo} placeholder="ссылка на видео" />
-
-<button on:click={() => {
-    push(ref(db, "/tricks"), trick);
-    trick = new Trick();
-}}>сохранить</button>
-
-<h1>создать метку</h1>
-<input bind:value={point.title} placeholder="Заголовок" />
-<input bind:value={point.latitude} placeholder="ширина" />
-<input bind:value={point.longitude} placeholder="ширина" />
-
-<button on:click={() => {
-    push(ref(db, "/points"), point);
-    point = new Point();
-}}>сохранить</button>
 </div>
