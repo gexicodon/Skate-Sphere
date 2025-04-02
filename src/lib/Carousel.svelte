@@ -8,16 +8,19 @@
       image: '/carousel_img1.png',
       title: 'Grand Skate Tour 2024',
       description: 'Крупнейшее скейт-мероприятие в России',
+      slug: 'gst-2024'
     },
     {
       image: '/carousel_img2.png',
       title: 'SLS 2024',
       description: 'Самый крупный международный турнир по скейтбордингу',
+      slug: 'sls-2024'
     },
     {
       image: '/carousel_img3.png',
       title: 'Крытые скейтпарки Москвы',
       description: 'Где можно покататься зимой в 2024-2025 году',
+      slug: 'msc-skateparks-winter'
     },
   ];
 
@@ -34,7 +37,7 @@
       <div class="slide" style="background-image:url({slide.image});">
         <h2>{slide.title}</h2>
         <p>{slide.description}</p>
-        <Button link="/" text="Подробнее" />
+        <Button link='news/{slide.slug}' text="Подробнее" />
       </div>
     {/each}
   </div>

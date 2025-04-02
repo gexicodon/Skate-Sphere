@@ -17,7 +17,7 @@
     flex-direction: row;
     align-items: center;
     padding: 0px;
-    gap: 26px;
+    gap: 30px;
 
     width: 558px;
     height: 253px;
@@ -34,7 +34,7 @@
       flex-direction: column;
       align-items: flex-start;
       padding: 24px 0px 0px;
-      gap: 50px;
+      gap: 70px;
 
       width: 182px;
       height: 253px;

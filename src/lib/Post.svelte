@@ -1,5 +1,6 @@
 <script>
   export let post;
+  import Icon from './Icon.svelte';
 </script>
 
 <div class="post" style="background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%), url({post.cover}); background-size: cover; background-position: center;">
@@ -8,6 +9,12 @@
 </div>
 <div class="content">
   <p>{post.content}</p>
+  <div class="back-btn">
+    <a href="/news">
+      <Icon id="arrow-left" width="50" height="50" />
+      <h2>Назад к новостям</h2>
+    </a>
+  </div>
 </div>
 
 <style lang="scss">
@@ -76,6 +83,30 @@
     }
   }
 
+  .back-btn {
+      a {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background-color: #870000;
+        padding: 20px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #a30000;
+        }
+
+        h2 {
+          margin: 0;
+        }
+      }
+    }
   /* Медиазапросы для адаптации под разные устройства */
   @media (max-width: 1200px) {
     .post {
