@@ -107,73 +107,88 @@
         }
       }
     }
-  /* Медиазапросы для адаптации под разные устройства */
-  @media (max-width: 1200px) {
+    @media (max-width: 1200px) {
     .post {
-      padding: 80px;
-      min-height: 500px;
-
-      .title {
-        font-size: 72px;
-      }
-
-      .date {
-        font-size: 20px;
-      }
+      min-height: 70vh;
     }
 
     .content {
-      padding: 80px;
+      padding: 4vw;
+    }
+  }
 
-      p {
-        font-size: 20px;
-      }
+  @media (max-width: 992px) {
+    .back-btn a {
+      padding: 1rem 1.5rem;
+      gap: 15px;
+      max-width: 280px;
     }
   }
 
   @media (max-width: 768px) {
     .post {
-      padding: 60px;
-      min-height: 400px;
-
-      .title {
-        font-size: 48px;
-      }
-
-      .date {
-        font-size: 18px;
-      }
+      min-height: 60vh;
+      padding: 4vw;
     }
 
     .content {
-      padding: 60px;
+      padding: 4vw;
 
       p {
-        font-size: 18px;
+        line-height: 1.7;
+      }
+    }
+
+    .back-btn {
+      margin-top: 2rem;
+
+      a {
+        padding: 0.8rem 1.2rem;
+        gap: 12px;
+        max-width: 250px;
+        font-size: 1.1rem;
       }
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 576px) {
     .post {
-      padding: 40px;
-      min-height: 300px;
-
-      .title {
-        font-size: 36px;
-      }
-
-      .date {
-        font-size: 16px;
-      }
+      min-height: 50vh;
+      padding: 5vw 4vw;
     }
 
     .content {
-      padding: 40px;
+      padding: 5vw 4vw;
 
       p {
-        font-size: 16px;
+        line-height: 1.6;
+        text-align: left;
       }
+    }
+
+    .back-btn {
+      margin-top: 1.5rem;
+
+      a {
+        width: 100%;
+        max-width: none;
+        justify-content: center;
+        padding: 0.7rem 1rem;
+        gap: 10px;
+        font-size: 1rem;
+
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    .back-btn a {
+      font-size: 0.9rem;
+      padding: 0.6rem 0.9rem;
     }
   }
 </style>

@@ -3,9 +3,12 @@
     import { Point } from "$lib/models/point";
     import { db } from "$lib/scripts/firebase";
     import { ref, push, set } from "firebase/database";
+  import { TrickContent } from "$lib/models/trick";
+
 
     let post = new Post();
     let point = new Point();
+    let trick = new TrickContent();
 </script>
 
 <div>
@@ -32,5 +35,14 @@
 <button on:click={() => {
     push(ref(db, "/points"), point);
     point = new Point();
+}}>сохранить</button>
+<h1>создать трюк</h1>
+<input bind:value={trick.trickTitle} placeholder="Заголовок" />
+<input bind:value={trick.trickDescription} placeholder="описание" />
+<input bind:value={trick.content} placeholder="туториал" />
+<input bind:value={trick.slug} placeholder="ссылка" />
+<button on:click={() => {
+    push(ref(db, "/tricks"), trick);
+    trick = new TrickContent();
 }}>сохранить</button>
 </div>

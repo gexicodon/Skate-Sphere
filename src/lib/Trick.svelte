@@ -20,9 +20,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%; /* Ширина компонента */
-    max-width: 800px; /* Максимальная ширина */
-    margin: 20px auto; /* Центрирование */
+    width: 80%;
+    max-width: 800px; 
+    margin: 20px auto; 
     padding: 20px;
     background: #373737;
     border-radius: 30px;
@@ -33,9 +33,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between; /* Разделяем левую и правую части */
+    justify-content: space-between; 
     width: 100%;
-    gap: 20px; /* Расстояние между title и right-section */
+    gap: 20px; 
   }
 
   h1 {
@@ -44,14 +44,14 @@
     font-size: 32px;
     color: #FFFFFF;
     margin: 0;
-    white-space: nowrap; /* Заголовок не переносится на новую строку */
+    white-space: nowrap; 
   }
 
   .right-section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px; /* Расстояние между description и button */
+    gap: 20px; 
   }
 
   p {
@@ -60,7 +60,7 @@
     font-size: 20px;
     color: #FFFFFF;
     margin: 0;
-    white-space: nowrap; /* Описание не переносится на новую строку */
+    white-space: nowrap; 
   }
 
   button {
@@ -87,49 +87,49 @@
     }
   }
 
-  /* Медиазапросы для адаптивности */
+
   @media (max-width: 768px) {
     .card {
-      width: 90%; /* Увеличиваем ширину на мобильных */
+      width: 90%; 
       padding: 15px;
     }
 
     .content {
-      flex-direction: column; /* Элементы в столбик на мобильных */
+      flex-direction: column; 
       gap: 15px;
     }
 
     h1 {
-      font-size: 28px; /* Уменьшаем размер заголовка */
-      text-align: center; /* Центрируем заголовок */
+      font-size: 28px; 
+      text-align: center; 
     }
 
     .right-section {
-      flex-direction: column; /* description и button в столбик */
+      flex-direction: column; 
       gap: 10px;
     }
 
     p {
-      font-size: 18px; /* Уменьшаем размер описания */
-      text-align: center; /* Центрируем описание */
+      font-size: 18px; 
+      text-align: center; 
     }
 
     button {
-      width: 100%; /* Кнопка на всю ширину */
+      width: 100%; 
     }
   }
 
   @media (max-width: 480px) {
     h1 {
-      font-size: 24px; /* Еще меньше заголовок */
+      font-size: 24px; 
     }
 
     p {
-      font-size: 16px; /* Еще меньше описание */
+      font-size: 16px; 
     }
 
     button {
-      padding: 8px 16px; /* Уменьшаем padding кнопки */
+      padding: 8px 16px;
     }
   }
 </style>

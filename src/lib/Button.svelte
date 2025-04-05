@@ -40,7 +40,7 @@
       }
     }
   
-    /* Медиазапросы для адаптации под разные устройства */
+
     @media (max-width: 1200px) {
       .button_container {
         width: 600px;

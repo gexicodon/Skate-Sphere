@@ -16,11 +16,10 @@
       loading = true;
       posts = await getPosts();
       loading = false;
-    } catch (err: unknown) { // <--- ЗДЕСЬ ИЗМЕНЕНИЕ
+    } catch (err: unknown) { 
       if (err instanceof Error) {
         error = err;
       } else {
-        // Обработка случая, когда err не является Error
         error = new Error(`Неизвестная ошибка: ${String(err)}`); 
       }
       loading = false;

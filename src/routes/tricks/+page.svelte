@@ -16,11 +16,10 @@
       loading = true;
       tricks = await getTricks();
       loading = false;
-    } catch (err: unknown) { // <--- ЗДЕСЬ ИЗМЕНЕНИЕ
+    } catch (err: unknown) { 
       if (err instanceof Error) {
         error = err;
       } else {
-        // Обработка случая, когда err не является Error
         error = new Error(`Неизвестная ошибка: ${String(err)}`); 
       }
       loading = false;
@@ -87,7 +86,7 @@
     }
   }
 
-  /* Медиазапросы для адаптации под разные устройства */
+
   @media (max-width: 1200px) {
     .banner {
       height: 500px;

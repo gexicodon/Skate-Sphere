@@ -1,13 +1,13 @@
 <script>
-  export let post; // Принимаем Post как свойство
+  export let post; 
 </script>
 
 <div class="card">
-  <div class="img" style="background-image: url({post.cover}); background-size: cover;"></div> <!-- Изменено для лучшего отображения -->
+  <div class="img" style="background-image: url({post.cover}); background-size: cover;"></div>
   <div class="content">
     <h1 class="title">{post.title}</h1>
     <p class="description">{post.description}</p>
-    <a href={`/news/${post.slug}`} class="more-button">Подробнее</a> <!-- Убрал <button> -->
+    <a href={`/news/${post.slug}`} class="more-button">Подробнее</a>
   </div>
 </div>
 
@@ -18,45 +18,50 @@
     align-items: center;
     padding: 0px;
     gap: 30px;
-
     width: 558px;
     height: 253px;
     background: #373737;
     border-radius: 30px;
+    overflow: hidden; 
 
     .img {
-      width: 253px;
-      height: 253px;
-      border-radius: 30px;
+      min-width: 253px;
+      height: 100%;
+      border-radius: 30px 0 0 30px;
+      background-position: center;
+      background-repeat: no-repeat;
     }
+
     .content {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      padding: 24px 0px 0px;
-      gap: 70px;
-
-      width: 182px;
-      height: 253px;
+      padding: 24px 20px;
+      gap: 20px;
+      height: 100%;
+      box-sizing: border-box;
+      flex-grow: 1;
 
       h1 {
-        width: 182px;
-        height: 16px;
-
+        margin: 0;
         font-family: 'Montserrat';
         font-weight: 800;
         font-size: 20px;
         color: #ffffff;
+        line-height: 1.2;
+        word-wrap: break-word;
       }
-      p {
-        width: 182px;
-        height: 16px;
 
+      p {
+        margin: 0;
         font-family: 'Montserrat';
         font-weight: 400;
         font-size: 16px;
         color: #ffffff;
+        line-height: 1.4;
+        word-wrap: break-word;
+        flex-grow: 1;
       }
+
       .more-button {
         display: inline-block;
         padding: 10px 20px;
@@ -66,6 +71,8 @@
         border-radius: 10px;
         font-family: 'Montserrat';
         font-weight: 800;
+        align-self: flex-start;
+        margin-top: auto;
       }
     }
   }
@@ -75,25 +82,27 @@
       flex-direction: column;
       width: 90%;
       height: auto;
-      padding: 20px;
+      padding: 0;
 
       .img {
         width: 100%;
         height: 200px;
+        border-radius: 30px 30px 0 0;
       }
+
       .content {
         width: 100%;
-        height: auto;
-        padding: 20px 0px;
-        gap: 20px;
+        padding: 20px;
+        gap: 15px;
 
         h1, p {
-          width: 100%;
           text-align: center;
+          width: 100%;
         }
+
         .more-button {
-          width: 100%;
-          text-align: center;
+          align-self: center;
+          margin-top: 10px;
         }
       }
     }
@@ -104,13 +113,16 @@
       .img {
         height: 150px;
       }
+
       .content {
         h1 {
           font-size: 18px;
         }
+
         p {
           font-size: 14px;
         }
+
         .more-button {
           padding: 8px 16px;
           font-size: 14px;

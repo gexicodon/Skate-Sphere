@@ -6,7 +6,7 @@
  </script>
  
  <style>
-     /* your styles go here */
+     
  </style>
  
  <svg class={className} width={width} height={height}>

@@ -8,7 +8,7 @@
     let loading = true;
     let error: any = null;
   
-    // Объявление функции вне блока $:, теперь это обычная функция
+
     async function fetchPost() {
   try {
     loading = true;
@@ -28,7 +28,7 @@
 
 
   
-    // Вызов функции внутри реактивного блока $:
+
     $: fetchPost(); 
   </script>
   <Navbar />

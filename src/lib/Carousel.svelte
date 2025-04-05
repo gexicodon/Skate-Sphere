@@ -49,20 +49,20 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 642px; /* Высота карусели по умолчанию */
+    height: 642px; 
     margin: auto;
 
     .slides {
       display: flex;
       transition: transform 0.5s ease-in-out;
-      height: 100%; /* Слайды занимают всю высоту карусели */
+      height: 100%; 
     }
 
     .slide {
       min-width: 100%;
-      height: 100%; /* Слайд занимает всю высоту карусели */
-      background-size: cover; /* Изображение масштабируется, чтобы заполнить слайд */
-      background-position: center; /* Центрирование изображения */
+      height: 100%; 
+      background-size: cover; 
+      background-position: center; 
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -90,7 +90,7 @@
     }
   }
 
-  /* Медиазапросы для адаптации под разные устройства */
+
   @media (max-width: 1200px) {
     .carousel {
       height: 500px;
