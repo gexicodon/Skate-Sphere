@@ -1,9 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue, get } from "firebase/database";
-import { getAuth } from "firebase/auth";
+import { getAuth} from "firebase/auth";
 import { Post } from '../models/post';
 import { Point } from "$lib/models/point";
 import { TrickContent } from "$lib/models/trick";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyAuIxicMLsB0bLLf4MSttfBSvShHl7B1bs",
@@ -19,6 +20,7 @@ const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export const db = getDatabase(app);
+
 
 export const getPosts = async () => {
   try {

@@ -17,7 +17,9 @@
     <a href="/">Советы</a>
   </nav>
   <div class="icons">
+    <a href='/login'>
     <Icon id="profile" width="50" height="50"></Icon>
+  </a>
   </div>
 </div>
 
