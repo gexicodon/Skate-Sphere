@@ -87,6 +87,7 @@
   }
 
 
+
   @media (max-width: 1200px) {
     .banner {
       height: 500px;

@@ -14,7 +14,7 @@
     <a href="/maps">Карты</a>
     <a href="/tricks">Трюки</a>
     <a href="/news">Новости</a>
-    <a href="/">Советы</a>
+    <a href="/tips">Советы</a>
   </nav>
   <div class="icons">
     <a href='/login'>
