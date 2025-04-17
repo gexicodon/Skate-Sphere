@@ -34,7 +34,7 @@
     <a class='link' href="/maps">Карты</a>
     <a class='link' href="/tricks">Трюки</a>
     <a class='link' href="/news">Новости</a>
-    <a class='link' href="/">Советы</a>
+    <a class='link' href="/tips">Советы</a>
   </div>
 </div>
 
