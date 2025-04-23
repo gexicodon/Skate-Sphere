@@ -27,7 +27,6 @@ export const getPosts = async () => {
       const snapshot = await get(ref(getDatabase(), '/posts'));
       if (snapshot.exists()) {
           return Object.values(snapshot.val()).map(post => {
-            //преобразуем строку в объект даты, если данные хранятся как строка
             return new Post(post.title, post.description, post.cover, post.created, post.published, post.content, post.slug);
           });
       } else {
@@ -35,7 +34,7 @@ export const getPosts = async () => {
       }
   } catch (error) {
       console.error("Ошибка при получении постов:", error);
-      return []; // Возвращаем пустой массив при ошибке
+      return []; 
   }
 };
 
@@ -44,7 +43,6 @@ export const getPoints = async () => {
       const snapshot = await get(ref(getDatabase(), '/points'));
       if (snapshot.exists()) {
           return Object.values(snapshot.val()).map(point => {
-            //преобразуем строку в объект даты, если данные хранятся как строка
             return new Point(point.title, point.latitude, point.longitude, point.slug, point.description, point.image);
           });
       } else {
@@ -52,7 +50,7 @@ export const getPoints = async () => {
       }
   } catch (error) {
       console.error("Ошибка при получении постов:", error);
-      return []; // Возвращаем пустой массив при ошибке
+      return []; 
   }
 };
 
@@ -61,7 +59,6 @@ export const getTricks = async () => {
       const snapshot = await get(ref(getDatabase(), '/tricks'));
       if (snapshot.exists()) {
           return Object.values(snapshot.val()).map(trick => {
-            //преобразуем строку в объект даты, если данные хранятся как строка
             return new TrickContent(trick.trickTitle, trick.trickDescription, trick.slug, trick.trickVideo, trick.category, trick.content);
           });
       } else {
@@ -69,6 +66,6 @@ export const getTricks = async () => {
       }
   } catch (error) {
       console.error("Ошибка при получении постов:", error);
-      return []; // Возвращаем пустой массив при ошибке
+      return []; 
   }
 };
