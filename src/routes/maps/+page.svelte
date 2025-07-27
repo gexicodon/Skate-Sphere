@@ -1,11 +1,9 @@
 <script>
-  import Footer from '$lib/Footer.svelte';
-  import Navbar from '$lib/Navbar.svelte';
   import { Map, TileLayer, Marker, Popup } from 'sveaflet';
   import { db } from '$lib/scripts/firebase';
   import { onValue, ref } from 'firebase/database';
   import { onMount } from 'svelte';
-  import Mapcontent from '$lib/Mapcontent.svelte';
+  import Mapcontent from '$lib/components/Mapcontent.svelte';
   let points = new Array();
 
   onMount(() => {
@@ -18,7 +16,7 @@
   
 </script>
 
-<Navbar />
+
 <div class="banner_container">
   <div class="banner_content animated fadeInUp">
     <h1 class="title">Скейтпарки Москвы</h1>
@@ -44,7 +42,7 @@
   </Map>
 </div>
 
-<Footer />
+
 
 <style lang="scss">
   .banner_container {

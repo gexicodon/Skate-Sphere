@@ -1,9 +1,5 @@
 <script lang="ts">
-  import Footer from '$lib/Footer.svelte';
-  import Navbar from '$lib/Navbar.svelte';
-  import Trick from '$lib/Trick.svelte';
-  import { db } from '$lib/scripts/firebase';
-  import { onValue, ref } from 'firebase/database';
+  import Trick from '$lib/components/Trick.svelte';
   import { onMount } from 'svelte';
   import { getTricks } from '$lib/scripts/firebase';
   import { TrickContent } from "$lib/models/trick";
@@ -27,7 +23,7 @@
   });
 </script>
 
-<Navbar />
+
 <div class="banner">
   <div class="banner_content">
     <h1 class="title">Трюки</h1>
@@ -48,7 +44,7 @@
   </div>
 {/if}
 </div>
-<Footer />
+
 
 <style lang="scss">
   .banner {

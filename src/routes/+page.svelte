@@ -1,18 +1,18 @@
 <script>
-  import Button from "$lib/Button.svelte";
-  import Card from "$lib/Card.svelte";
-  import Footer from "$lib/Footer.svelte";
-  import Navbar from "$lib/Navbar.svelte";
-  import MainPageCard from "$lib/MainPageCard.svelte";
+  import Card from "$lib/components/Card.svelte";
+  import MainPageCard from "$lib/components/MainPageCard.svelte";
 </script>
 
-<Navbar />
 
-<div class="banner_container">
-  <div class="banner_content animated fadeInUp">
-    <h1 class="title">Платформа для обучения трюкам на скейтборде</h1>
+
+<div class="relative w-full bg-[#870000] bg-[url('/banner_img.png')] bg-cover flex flex-col items-start gap-[10px] h-[300px] lg:h-[642px]">
+  <div class="absolute inset-0 w-full h-full flex flex-col items-center justify-center gap-[51px]">
+    <h1 class="font-montserrat font-extrabold text-white text-center text-[40px] lg:text-[96px] w-full lg:w-[1180px] px-4">
+      Платформа для обучения трюкам на скейтборде
+    </h1>
   </div>
 </div>
+
 
 <div class="cards_group">
   <MainPageCard />
@@ -27,41 +27,9 @@
     description="Найти подходящий скейтпарк, быть в курсе последних новостей о скейтбординге! "
   ></Card>
 </div>
-<Footer />
+
 
 <style lang="scss">
-  .banner_container {
-    width: 100%;
-    height: 642px;
-    background: #870000;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 10px;
-    background-image: url("/banner_img.png");
-    background-size: 100% 100%;
-
-    .title {
-      font-family: "Montserrat";
-      font-weight: 800;
-      font-size: 96px;
-      color: white;
-      text-align: center;
-      width: 1180px;
-    }
-
-    .banner_content {
-      width: 100%;
-      height: 642px;
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      gap: 51px;
-      justify-content: center;
-      align-items: center;
-    }
-  }
 
   .cards_group {
     display: flex;
@@ -72,47 +40,9 @@
   }
 
 
-  @media (max-width: 768px) {
-    .banner_container {
-      height: 400px; 
-      background-size: cover;
-
-      .title {
-        font-size: 48px; 
-        width: 80%; 
-      }
-
-      .banner_content {
-        height: 400px; 
-        gap: 20px; 
-      }
-    }
-
-    .cards_group {
-      padding: 30px;
-      gap: 30px; 
-    }
-  }
+ 
 
 
-  @media (max-width: 480px) {
-    .banner_container {
-      height: 300px; 
 
-      .title {
-        font-size: 36px; 
-        width: 90%; 
-      }
 
-      .banner_content {
-        height: 300px; 
-        gap: 10px; 
-      }
-    }
-
-    .cards_group {
-      padding: 20px; 
-      gap: 20px; 
-    }
-  }
 </style>

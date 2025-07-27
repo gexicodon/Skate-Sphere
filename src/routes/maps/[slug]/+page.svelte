@@ -1,8 +1,6 @@
 <script lang="ts">
     import { getPoints } from '$lib/scripts/firebase';
-    import Navbar from '$lib/Navbar.svelte';
-  import Footer from '$lib/Footer.svelte';
-  import Mapcontent from '$lib/Mapcontent.svelte';
+  import Mapcontent from '$lib/components/Mapcontent.svelte';
   export let data;
     let point: any = null;
     let loading = true;
@@ -32,7 +30,7 @@
 
     $: fetchPoint(); 
   </script>
-  <Navbar />
+ 
   <div class="banner_container">
     <div class="banner_content animated fadeInUp">
       <h1 class="title">Скейтпарки Москвы</h1>
@@ -48,7 +46,7 @@
     <p>Пост не найден</p>
   {/if}
   
-  <Footer />
+
 
   <style lang="scss">
     .banner_container {

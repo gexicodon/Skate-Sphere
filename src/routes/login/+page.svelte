@@ -2,7 +2,7 @@
     import { auth } from '$lib/scripts/firebase';
     import { signInWithEmailAndPassword } from 'firebase/auth';
     import { goto } from '$app/navigation';
-    import Navbar from '$lib/Navbar.svelte';
+
   
     let email = '';
     let password = '';
@@ -18,7 +18,6 @@
     }
 </script>
 
-<Navbar/>
 
 <div class="login-page">
     <div class="login-container">

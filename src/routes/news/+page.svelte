@@ -1,8 +1,6 @@
 <script lang='ts'>
-  import Carousel from '$lib/Carousel.svelte';
-  import Footer from '$lib/Footer.svelte';
-  import Navbar from '$lib/Navbar.svelte';
-  import Newscard from '$lib/Newscard.svelte';
+  import Carousel from '$lib/components/Carousel.svelte';
+  import Newscard from '$lib/components/Newscard.svelte';
   import { getPosts } from '$lib/scripts/firebase';
   import { Post } from '$lib/models/post';
   import { onMount } from 'svelte';
@@ -27,7 +25,7 @@
   });
 </script>
 
-<Navbar />
+
 <Carousel />
 {#if loading}
   <p>Загрузка...</p>
@@ -42,7 +40,6 @@
     </div>
   </div>
 {/if}
-<Footer />
 
 <style lang="scss">
   .content {

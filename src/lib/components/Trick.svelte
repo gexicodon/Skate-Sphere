@@ -1,5 +1,5 @@
 <script>
-  import { TrickContent } from "./models/trick";
+  import { TrickContent } from "../models/trick";
   export let trick = new TrickContent();
 </script>
 

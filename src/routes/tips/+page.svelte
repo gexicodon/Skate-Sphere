@@ -1,12 +1,10 @@
 <script>
-  import Footer from "$lib/Footer.svelte";
-import Navbar from "$lib/Navbar.svelte";
-  import Tip from "$lib/Tip.svelte";
+  import Tip from "$lib/components/Tip.svelte";
 
 
 </script>
 
-<Navbar />
+
 <div>
     <div class="banner">
         <div class="banner_content">
@@ -26,7 +24,7 @@ import Navbar from "$lib/Navbar.svelte";
     description="Учиться кататься на скейте можно везде, где тебе будет это комфортно. Если ты живёшь в Москве, ты можешь воспользоваться нашей картой скейтпарков." />
     </div>
 </div>
-<Footer />
+
 <style lang="scss">
   .banner {
     width: 100%;

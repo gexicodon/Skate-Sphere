@@ -1,8 +1,6 @@
 <script lang="ts">
     import { getTricks } from '$lib/scripts/firebase';
-    import Navbar from '$lib/Navbar.svelte';
-  import Footer from '$lib/Footer.svelte'; 
-  import TrickContent from '$lib/TrickContent.svelte';
+  import TrickContent from '$lib/components/TrickContent.svelte';
   export let data;
     let trick: any = null;
     let loading = true;
@@ -31,7 +29,7 @@
 
     $: fetchPost(); 
   </script>
-  <Navbar />
+
   {#if loading}
     <p>Загрузка...</p>
   {:else if error}
@@ -42,4 +40,3 @@
     <p>Пост не найден</p>
   {/if}
   
-  <Footer />
